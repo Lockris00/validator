@@ -42,6 +42,7 @@ function Validator(options) {
         // Khi submit form
         formElement.onsubmit = function (e) {
             let isFormValid = true
+            e.preventDefault()
 
             // Lặp qua từng rule và validate
             options.rules.forEach(rule => {
@@ -83,7 +84,6 @@ function Validator(options) {
                 }
                 // Trường hợp submit với hành vi mặc định
                 else {
-                    e.preventDefault()
                     formElement.submit()
                 }
             }
